@@ -38,7 +38,7 @@ public class Shop {
 		//checks if user put in a correct index number, then checks if there is any in stock
 		if(userInput >= 0 && userInput <= 4) {
 			if(inventory[userInput].Buy() == true) {
-				System.out.println("Successful");
+				System.out.println("Your purchase was successful");
 				totalAmount += inventory[userInput].getPrice();
 			}
 			else {
