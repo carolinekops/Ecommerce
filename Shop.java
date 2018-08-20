@@ -5,14 +5,14 @@ public class Shop {
 	static double totalAmount = 0.0;
 	static int userInput = 9;
 	static Product[] inventory = {new Product("Business Ritual Women’s Long Sleeve Top" ,65.39, "Apparel",4, 'L', "Blue"), new Product("The Art of Computer Programming", 190.54,"Books", 9, "Donald E. Knuth")
-			,new Product("Men's Business Casual Shirt", 57.10, "Apparel", 2, 'M', "Teal"),new Product("Organic Turmeric Soap", 11.25, "Bath & Beauty",1), new Product("Head First Design Pattern", 37.35, "Books",3, "Eric Freeman")};
+		,new Product("Men's Business Casual Shirt", 57.10, "Apparel", 2, 'M', "Teal"),new Product("Organic Turmeric Soap", 11.25, "Bath & Beauty",1), new Product("Head First Design Pattern", 37.35, "Books",3, "Eric Freeman")};
 	static boolean isShopOpen = true;
 	
 public static void main(String[] args) {
 		//Declare local variables
 		Scanner keyboard = new Scanner(System.in);
 
-	if(isShopOpen = false) {	
+	if(!isShopOpen) {	
 		System.out.println("Shop is closed, try again later!");
 		
 	}else {
@@ -31,7 +31,10 @@ public static void main(String[] args) {
 				System.out.println("Sorry! This product is out of stock");
 				}
 			}
-			
+			catch(InputMismatchException e) {
+				System.out.println("Invalid input, exiting the shopping cart! Total amount is " + totalAmount);
+				break;
+			}
 			catch(ArrayIndexOutOfBoundsException e){
 				System.out.println("Invalid input, exiting the shopping cart! Total amount is " + totalAmount);
 				break;
